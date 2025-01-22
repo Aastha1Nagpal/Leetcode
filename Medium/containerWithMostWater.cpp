@@ -1,3 +1,23 @@
+brute force: 
+
+class Solution {
+public:
+    int maxArea(vector<int>& height) {
+       int n = height.size();
+       int maxArea = 0;
+       for(int i = 0; i<n; i++){
+        for(int j = i+1; j<n ; j++){
+            int width = j-i;
+            int area = width* min(height[i], height[j]);
+            maxArea = max(maxArea, area);
+        }
+       }
+       return maxArea; 
+    }
+};
+
+optimal solution:
+
 class Solution {
 public:
     int maxArea(vector<int>& height) {
